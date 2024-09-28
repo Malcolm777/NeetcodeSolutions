@@ -9,8 +9,12 @@ class Solution:
         maxArea = 0
         stack = [] # pair: (index, height)
 
+        # i goes through each bar in the histogram 
         for i, h in enumerate(heights): 
             start = i 
+
+            # checking if the current bar h is less than the heigh of the bar at the top of the stack 
+            # the bars are popped from the stack until the stack becomes empty or the current height is larget than the top of the stack 
             while stack and stack[-1][1] > h:
                 # if stack is not empty and top value of stack height is greater than the value we reached
                 index, height = stack.pop()
