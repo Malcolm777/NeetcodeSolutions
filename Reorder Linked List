@@ -1,0 +1,29 @@
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        #slow and fast pointers 
+        # first pointer moves one at a time 
+        # second pointer moves 2 at a time 
+        # second and fourth variable in list 1->5 will be our temp variables
+        slow, fast = head, head.next 
+        while fast and fast.next: 
+            slow = slow.next 
+            fast = fast.next.next 
+
+        #second pointer = next 
+        #create a temp variable to store the second variable 
+        #reverse the 2 halves
+        second = slow.next 
+        prev = slow.next = None 
+        while second: 
+            temp = second.next 
+            second.next = prev 
+            prev = second 
+            second = temp 
+
+        #merge the 2 halves 
+        first, second = head, prev 
+        while second: 
+            temp1, temp2 = first.next, second.next 
+            first.next = second 
+            second.next = temp1 
+            first, second = temp1, temp2 
