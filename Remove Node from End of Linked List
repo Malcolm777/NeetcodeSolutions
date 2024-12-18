@@ -1,20 +1,36 @@
+Key Concepts
+Singly Linked List: A data structure where each node contains a value (val) and a pointer (next) to the next node in the list.
+Two-Pointer Technique: Uses two pointers to traverse the list to efficiently identify the target node.
+
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         dummy = ListNode(0, head)
         left = dummy #left pointer 
         right = head #right pointer 
 
+        #right pointer is moved n steps ahead in the list 
         while n > 0 and right: 
             #keep shifting right 
             right = right.next 
             n -= 1 #once n = 0, we've shifted the amount we need to shift by 
 
-
+        #move both pointers until right reaches the end 
         while right: 
             left = left.next 
             right = right.next 
 
-        #delete the node 
+        #next pointer of the left node skips over the target value, removing it from the list 
         #update the left node's next pointer 
         left.next = left.next.next 
         return dummy.next 
+
+
+Execution:
+
+Create dummy node: 0 -> 1 -> 2 -> 3 -> 4 -> 5
+Shift right pointer 2 steps: right now points to 3.
+Move both pointers:
+left points to 3.
+right reaches the end.
+Remove the node: left.next = left.next.next, resulting in 1 -> 2 -> 3 -> 5.
+Return dummy.next: 1 -> 2 -> 3 -> 5.
