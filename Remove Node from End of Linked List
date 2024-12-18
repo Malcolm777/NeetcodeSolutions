@@ -1,0 +1,20 @@
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        dummy = ListNode(0, head)
+        left = dummy #left pointer 
+        right = head #right pointer 
+
+        while n > 0 and right: 
+            #keep shifting right 
+            right = right.next 
+            n -= 1 #once n = 0, we've shifted the amount we need to shift by 
+
+
+        while right: 
+            left = left.next 
+            right = right.next 
+
+        #delete the node 
+        #update the left node's next pointer 
+        left.next = left.next.next 
+        return dummy.next 
