@@ -1,3 +1,5 @@
+Hash map (two pass) 
+
 """
 # Definition for a Node.
 class Node:
