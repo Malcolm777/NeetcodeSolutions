@@ -1,3 +1,13 @@
+Edge cases: 
+- 2 non empty linked lists representing the ints that we're adding together 
+- 500 + ____ = 
+- second number will never be empty 
+- non-negative ints - 
+- digits stored in reverse order 
+
+For each digit we need a separate node 
+
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
