@@ -30,3 +30,21 @@ class Solution:
             slow2 = nums[slow2]
             if slow == slow2:
                 return slow
+
+
+Step-by-Step Explanation
+1. Detect the Cycle (Tortoise and Hare Phase)
+Initialization: Start with two pointers, slow and fast, both set to 0 (starting index).
+Movement:
+slow moves one step at a time: slow = nums[slow].
+fast moves two steps at a time: fast = nums[nums[fast]].
+Detection: The loop continues until slow and fast meet, which indicates the presence of a cycle.
+
+2. Find the Entrance to the Cycle
+Reset one pointer: Set slow2 to 0, while slow remains at the meeting point.
+Movement:
+Both slow and slow2 move one step at a time: slow = nums[slow] and slow2 = nums[slow2].
+Detection: The loop continues until slow and slow2 meet again, which will happen at the duplicate number (the entrance to the cycle).
+
+3. Return the Duplicate Number
+When slow equals slow2, return either as the duplicate number.
