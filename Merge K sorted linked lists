@@ -27,3 +27,6 @@ class Solution:
             cur.next = ListNode(node)
             cur = cur.next
         return res.next
+
+Time Complexity: O(n log n) 
+Space complexity: O(n)
