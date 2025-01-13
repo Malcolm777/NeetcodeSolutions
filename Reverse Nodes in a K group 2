@@ -1,4 +1,10 @@
 Reverse Nodes in a K group 2
+
+Time complexity: 
+O(n)
+Space complexity: 
+0(1) 
+
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         dummy = ListNode(0, head)
