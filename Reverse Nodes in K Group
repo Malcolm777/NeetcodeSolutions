@@ -30,3 +30,12 @@ class Solution:
                 group -= 1
             head = cur
         return head
+
+Complexity: The time complexity of this approach is 
+𝑂(𝑛)
+O(n), where 𝑛
+n is the number of nodes in the linked list. The space complexity is 
+𝑂(1)
+O(1) since we're reversing the links in place.
+
+Edge Cases: Handle cases where the linked list is empty or has fewer than k nodes.
