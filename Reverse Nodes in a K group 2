@@ -33,3 +33,11 @@ class Solution:
             curr = curr.next
             k -= 1
         return curr
+
+
+Complexity: The time complexity of this approach is 
+𝑂(𝑛)
+O(n), where n is the number of nodes in the linked list. The space complexity is 
+𝑂(1) or O(1) since we're reversing the links in place.
+
+Edge Cases: Handle cases where the linked list is empty or has fewer than k nodes.
