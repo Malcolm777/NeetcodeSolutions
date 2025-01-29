@@ -89,3 +89,24 @@ class Solution {
         return res;
     }
 }
+
+Key Steps in the Algorithm
+Initialize Data Structures:
+
+res: Stores the final list of levels.
+Queue<TreeNode> q: A queue to manage nodes at each level.
+Start BFS Traversal:
+
+Add the root node to the queue.
+Process Each Level:
+
+Iterate while the queue is not empty.
+For each level:
+Create a new list level to store node values at this level.
+Iterate over the current queue size (which represents the number of nodes in the current level).
+Dequeue (poll()) a node.
+If the node is not null, add its value to level and enqueue its left and right children.
+After processing all nodes of a level, add level to res.
+Return the Final Result.
+
+
