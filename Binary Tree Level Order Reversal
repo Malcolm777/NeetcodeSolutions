@@ -19,6 +19,8 @@ Given abinary tree root, return the level order traversal of it of a nested list
  * }
  */
 
+depth first search 
+
 public class Solution {
     List<List<Integer>> res = new ArrayList<>();
     
@@ -63,6 +65,8 @@ public class Solution {
  *     }
  * }
  */
+
+breadth first searcg 
 
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
