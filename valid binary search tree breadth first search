@@ -1,0 +1,52 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+    //base case 
+    if (root == null) { 
+    return true; 
+    }
+
+    //enqueue the objects necessary into th elinked list
+    Queue<Object[]> queue = new LinkedList<>(); 
+    //add a new object array to the queue 
+    queue.offer(new Object[]{root, Long.MIN_VALUE, Long.MAX_VALUE});
+
+    //while there are elements in the queue 
+    while (!queue.isEmpty()) { 
+        Object[] current = queue.poll();
+        TreeNode node = (TreeNode) current[0]; 
+        long left = (long) current[1];
+        long right = (long) current[2];  
+
+    // compare the left and right subtrees to the node root 
+    if (node.val <= left || node.val >= right) { 
+        return false;
+    }
+
+    //check for null values in the left and right subtree
+    //if there are values then we need to enqueue the left object and the right object 
+    if (node.left != null) { 
+        queue.offer(new Object[]{node.left, left, (long) node.val});
+    }
+    if (node.right != null) { 
+        queue.offer(new Object[]{node.right, (long) node.val, right});
+    }
+}
+return true;
+    }
+}
