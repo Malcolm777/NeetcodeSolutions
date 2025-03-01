@@ -14,6 +14,8 @@
  * }
  */
 
+Recursive depth first search solution 
+
 public class Solution {
     static boolean left_check(int val, int limit) {
         return val < limit; 
