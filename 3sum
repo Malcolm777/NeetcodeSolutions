@@ -1,0 +1,31 @@
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+
+        //Set so unique values for a List of integers 
+        Set<List<Integer>> result = new HashSet<>(); 
+
+        //sort through the nums in the ine array 
+        Arrays.sort(nums); 
+
+        //loop through the first int array 
+        for(int i = 0; i < nums.length; i++) { 
+            
+            //loop through the second array 
+            for(int j = i + 1; j < nums.length; j++) { 
+
+                //loop through the second array 
+                for(int k = j + 1; k < nums.length; k++) { 
+                    if (nums[i] + nums[j] + nums[k] == 0) { 
+
+
+                        //Create a list of integers that will store that nums[i] + nums[j] + nums[k] as a list 
+                        List<Integers> temp = Arrays.asList(nums[i], nums[j], nums[k]); 
+                        result.add(temp)
+                    }
+                }
+            }
+        }
+        //return the array list of the result 
+        return new ArrayList<>(result);
+    }
+}
