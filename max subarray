@@ -1,0 +1,17 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int n = nums.length; 
+        int result = nums[0]; 
+
+        for(int i = 0; i < n; i++) { 
+        //current pointer to keep track of the amount 
+            int cur = 0; 
+            // loop through the j list 
+            for (int j = i; j < n; j++) {
+                cur += nums[j]; 
+                result = Math.max(result, cur); 
+            }
+       }
+       return result; 
+    }
+    } 
